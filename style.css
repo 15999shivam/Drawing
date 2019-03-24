@@ -1,0 +1,13 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+.div{
+    position:absolute;
+    background: black;
+    width: 5px;
+    height: 5px;
+    border-radius: 25px
+}
