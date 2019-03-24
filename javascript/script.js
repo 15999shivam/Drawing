@@ -1,23 +1,26 @@
-let flag= false
-window.addEventListener('click',function(e){
-   if(flag)
-   {
-       window.removeEventListener('mousemove',draw)
-        flag=false;
-   }
-   else{
-       window.addEventListener('mousemove',draw)
-       flag = true;
-   }
-})
-
 const body = document.querySelector('body');
+const eraserEl = document.querySelector('#eraser');
+const sizeInput = document.querySelector('#size');
 
-const draw = function(e)
-{
-    const div = document.createElement('div');
-    div.setAttribute('style',`top:${e.y}px; left:${e.x}px;`);
-    div.setAttribute('class',`div`);
-
-    body.appendChild(div);
+//eraser size
+let size = 5;
+const eraser = {
+    width:20,
+    height:20
 }
+window.addEventListener('dblclick',undragEraser)
+//setting up drawing pen
+window.addEventListener('click',toggleDraw);
+
+//settinng up eraser
+eraserEl.addEventListener('click',toogleDrag);
+eraserEl.setAttribute('style',`width:${eraser.width}px; height:${eraser.height}px`)
+
+//setting up size changer
+window.addEventListener('keypress',sizeFunction)
+
+//setting input for pen size information
+sizeInput.value = size
+sizeInput.addEventListener('change',updateBrushSize)
+
+

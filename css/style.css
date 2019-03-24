@@ -1,13 +1,28 @@
 *{
     padding: 0px;
     margin: 0px;
-    
+    background: cornsilk;
 }
 
 .div{
     position:absolute;
     background: black;
-    width: 5px;
-    height: 5px;
+    
     border-radius: 25px
+}
+
+#eraser
+{
+    position: absolute;
+    border: 1px solid black;
+    z-index: 102;
+    top:90vh;
+    background-color: white;
+    border: 2px solid black;
+}
+.erase
+{
+    position:absolute;
+    background-color: cornsilk;
+
 }
