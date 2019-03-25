@@ -1,13 +1,16 @@
 const body = document.querySelector('body');
 const eraserEl = document.querySelector('#eraser');
 const sizeInput = document.querySelector('#size');
-
+const randomColorCheckBox = document.querySelector('#randomColorCheckBox');
 //eraser size
 let size = 5;
 const eraser = {
     width:20,
     height:20
 }
+
+randomColorCheckBox.addEventListener('change',randomColorFunction)
+
 window.addEventListener('dblclick',undragEraser)
 //setting up drawing pen
 window.addEventListener('click',toggleDraw);

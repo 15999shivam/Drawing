@@ -76,7 +76,7 @@ const draw = function(e)
     const div = document.createElement('div');
     div.setAttribute('class',`div`);
     div.setAttribute('style',`top:${e.y}px; left:${e.x}px;z-index:10;width: ${size}px;
-    height: ${size}px;`);
+    height: ${size}px; background:${color()}`);
     body.appendChild(div);
 }
 
@@ -125,3 +125,42 @@ const undragEraser = ()=>{
     eraseflag = false;
 
 }
+
+//random color generator
+const randomColor = function()
+{
+    const letter = '123456789ABCDEF';
+    let color='#';
+    for(let i=0;i<6;i++)
+    {
+        color+=letter[parseInt((Math.random()*100)%15)]
+    }
+    return color;
+}
+
+//check for the checkbox of random color
+let colorFlag  = false;
+//set color flag
+const randomColorFunction = function(e)
+{
+    console.log(e)
+    if(e.target.checked)
+    {
+        colorFlag = true
+    }
+    else{
+      colorFlag = false
+    }
+}
+const color = function()
+{
+    if(colorFlag)
+    {
+        console.log(randomColor())
+        return randomColor();
+    }
+    else{
+        return '#000000';
+    }
+}
+
